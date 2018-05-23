@@ -4,3 +4,5 @@ src/Conditions/bin/
 src/Conditions/obj/
 src/.vs/
 src/.idea/
+src/obj/
+src/Conditions.sln.DotSettings.user

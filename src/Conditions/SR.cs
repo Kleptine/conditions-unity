@@ -112,7 +112,7 @@ namespace Conditions
         internal const string ValueShouldNotBePositiveInfinity = "ValueShouldNotBePositiveInfinity";
 
         private static readonly ResourceManager resource =
-            new ResourceManager(typeof (SR).Namespace + ".ExceptionMessages", typeof (SR).GetTypeInfo().Assembly);
+            new ResourceManager(typeof (SR).Namespace + ".ExceptionMessages", typeof (SR).Assembly);
 
         // Returns a string from the resource.
         internal static string GetString(string name)

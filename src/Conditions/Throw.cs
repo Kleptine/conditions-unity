@@ -854,7 +854,7 @@ namespace Conditions
         private static ConstraintViolationType GetEnumViolationOrDefault<T>(
             ConstraintViolationType defaultValue)
         {
-            if (typeof (T).GetTypeInfo().IsEnum)
+            if (typeof (T).IsEnum)
             {
                 return ConstraintViolationType.InvalidEnumViolation;
             }

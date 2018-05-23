@@ -7,6 +7,14 @@ namespace Conditions.Tests.UseCases
     public class NullTestUseCases
     {
         [TestMethod]
+        [Description("Throws no exceptions in normal case.")]
+        public void CheckBasicNoExceptions()
+        {
+            object o = new object();
+            Condition.Requires(o).IsNotNull();
+        }
+
+        [TestMethod]
         [Description("Use Case code should match with use of IsNotNull.")]
         public void CheckIsNotNull01()
         {

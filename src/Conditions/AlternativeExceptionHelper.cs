@@ -22,12 +22,12 @@ namespace Conditions
 
         private static ConstructorInfo FindConstructor()
         {
-            if (typeof (TException).GetTypeInfo().IsAbstract)
+            if (typeof (TException).IsAbstract)
             {
                 return null;
             }
 
-            return typeof(TException).GetTypeInfo().DeclaredConstructors
+            return typeof(TException).GetConstructors()
                 .Where(IsUsableConstructor).FirstOrDefault();
         }
 
@@ -36,7 +36,7 @@ namespace Conditions
         /// </summary>
         private static bool IsUsableConstructor(ConstructorInfo ctor)
         {
-            return ctor.Attributes.HasFlag(MethodAttributes.Public) &&
+            return ctor.IsPublic &&
                 ctor.GetParameters().Length == 1 &&
                 ctor.GetParameters().First().ParameterType == typeof(string);
         }

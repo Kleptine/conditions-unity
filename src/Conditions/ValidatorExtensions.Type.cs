@@ -47,7 +47,7 @@ namespace Conditions
             // significant effect.
             T value = validator.Value;
 
-            bool valueIsValid = value != null && type.GetTypeInfo().IsAssignableFrom(value.GetType().GetTypeInfo());
+            bool valueIsValid = value != null && type.IsInstanceOfType(value);
 
             if (!valueIsValid)
             {
@@ -100,7 +100,7 @@ namespace Conditions
 
             if (value != null)
             {
-                bool valueIsInvalid = type.GetTypeInfo().IsAssignableFrom(value.GetType().GetTypeInfo());
+                bool valueIsInvalid = type.IsInstanceOfType(value);
 
                 if (valueIsInvalid)
                 {
